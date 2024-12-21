@@ -13,6 +13,7 @@ const characters = [
   "L",
   "M",
   "N",
+     
   "O",
   "P",
   "Q",
