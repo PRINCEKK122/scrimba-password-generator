@@ -9,7 +9,7 @@ body {
 }
 
 .wrapper {
-  width: 500px;
+  width: 300px;
 }
 
 .wrapper h1 span {
@@ -21,7 +21,7 @@ h1 {
   line-height: 1;
   font-weight: 800;
   margin-bottom: 0;
-  font-size: 40px;
+  font-size: 30px;
 }
 
 .wrapper p {
