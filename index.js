@@ -97,26 +97,38 @@ const leftPassword = document.getElementById("left-password");
 const rightPassword = document.getElementById("right-password");
 const root = document.getElementById("root");
 const paragraphEl = document.getElementById("text");
+const spanEl = document.getElementById("password-text");
+
+const lightTheme = {
+  bgColor: "#ECFDF5",
+  bodyColor: "#2B283A",
+  paragraphColor: "#6B7280",
+  spanColor: "#10B981",
+};
+const darkTheme = {
+  bgColor: "#1f2937",
+  bodyColor: "#fff",
+  paragraphColor: "#D5D4D8",
+  spanColor: "#4ADF86",
+};
 
 const themes = document.getElementsByName("theme");
 for (let i = 0; i < themes.length; i++) {
-  themes[i].addEventListener("click", function (e) {
+  themes[i].addEventListener("click", function () {
     if (themes[i].value === "light") {
-      lightTheme();
+      changeTheme(lightTheme);
     } else {
-      darkTheme();
+      changeTheme(darkTheme);
     }
   });
 }
 
 passwordBtn.addEventListener("click", function () {
-  const passwordLength = 15;
   leftPassword.textContent = generatePassword();
   rightPassword.textContent = generatePassword();
 });
 
-function generatePassword() {
-  const passwordLength = 15;
+function generatePassword(passwordLength = 15) {
   const password = [];
 
   for (let i = 0; i < passwordLength; i++) {
@@ -127,16 +139,11 @@ function generatePassword() {
   return password.join("");
 }
 
-function lightTheme() {
-  root.style.backgroundColor = "#ECFDF5";
-  document.body.style.color = "#2B283A";
-  paragraphEl.style.color = "#6B7280";
-  document.getElementById("password-text").style.color = "#10B981";
+function changeTheme(themeColors) {
+  root.style.backgroundColor = themeColors.bgColor;
+  document.body.style.color = themeColors.bodyColor;
+  paragraphEl.style.color = themeColors.paragraphColor;
+  spanEl.style.color = themeColors.spanColor;
 }
 
-function darkTheme() {
-  root.style.backgroundColor = "#1f2937";
-  document.body.style.color = "#fff";
-  paragraphEl.style.color = "#D5D4D8";
-  document.getElementById("password-text").style.color = "#4ADF86";
-}
+changeTheme(lightTheme);
