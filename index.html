@@ -1,0 +1,33 @@
+<html id="root">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Karla:ital,wght@0,800;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1 id="heading">
+        Generate a
+        <span id="password-text" class="password-text">random password</span>
+      </h1>
+      <p id="text">Never use an insecure password again.</p>
+      <button id="password-btn">Generate passwords</button>
+      <input id="light" type="radio" value="light" name="theme" />
+      <label for="light">Light</label>
+      <input id="dark" type="radio" value="dark" name="theme" checked />
+      <label for="dark">Dark</label>
+    </div>
+
+    <div class="wrapper">
+      <div class="password-container">
+        <div id="left-password" class="password"></div>
+        <div id="right-password" class="password"></div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
